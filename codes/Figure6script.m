@@ -1,4 +1,6 @@
 %% Script to plot Figure 6
+% Written by D. B. Graham
+
 % load data for figure. Same data used as Figure 3
 load('Figure3data.mat');
 
