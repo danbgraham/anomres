@@ -1,4 +1,6 @@
 %% Script to plot Figure 4
+% Written by D. B. Graham
+
 ic = 1:4;
 
 %% Load and analyse 2015 Dec 02 data
