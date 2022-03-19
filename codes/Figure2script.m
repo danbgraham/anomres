@@ -1,4 +1,6 @@
 % Script to plot figure 2.
+% Written by D. B. Graham
+
 load('Figure2data.mat');
 ic = 3; % Spacecraft number
 
