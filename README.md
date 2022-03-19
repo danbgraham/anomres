@@ -9,7 +9,7 @@ The scripts require irfu-matlab (https://github.com/irfu/irfu-matlab) to be inst
 
 # Data
 The data used for this study are publically available at https://lasp.colorado.edu/mms/sdc/public. 
-For this study the following data products are used: //
+For this study the following data products are used: \\
 For electric field: EDP, mms\#/edp/brst/l2/dce/... //
 For background magnetic field: FGM, mms\#/fgm/brst/l2/... //
 For fluctuating magnetic field: SCM, mms\#/scm/brst/l2/scb/... //
