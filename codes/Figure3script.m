@@ -1,5 +1,7 @@
 %% Script to plot Figure 3
 % load data for figure
+% Written by D. B. Graham
+
 load('Figure3data.mat');
 
 ic = 1:4;
