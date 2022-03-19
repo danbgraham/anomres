@@ -1,6 +1,31 @@
 function [D,Dplus,Dminus] = calcD(varargin)
-%CALCD Summary of this function goes here
-%   Detailed explanation goes here
+% [D,Dplus,Dminus] = calcD('Elmn?','ner?','ne?','neerr?',dt);
+%
+% Function to calculate anomalous resistivity (drag) using the electric
+% field and particle moments from the four MMS spacecraft. 
+% Written by D. B. Graham
+% 
+% Input:
+%     Elmn? - electric fields from the four spacecraft (TSeries)
+%     ner? - high-resolution electron number densities from the four
+%       spacecraft (TSeries)
+%     ne? - electron number densities from the four spacecraft (TSeries)
+%     neerr? - error of the electron number densities from the four
+%       spacecraft (TSeries)
+%     dt - time delays between the four spacecraft (array of four numbers)
+%     
+% Output:
+%     D - anomalous resistivity (drag) computed from the four spacecraft (TSeries)
+%     Dplus - D + error in D (TSeries)
+%     Dminus - D - error in D (TSeries)
+
+% ----------------------------------------------------------------------------
+% "THE BEER-WARE LICENSE" (Revision 42):
+% <dgraham@irfu.se> wrote this file.  As long as you retain this notice you
+% can do whatever you want with this stuff. If we meet some day, and you think
+% this stuff is worth it, you can buy me a beer in return.   
+% Daniel B. Graham
+% ----------------------------------------------------------------------------
 
 ic = 1:4;
 
