@@ -1,4 +1,5 @@
 %% Plot Statistics Figure
+% Written by D. B. Graham
 
 load('Figure5data.mat');
 
