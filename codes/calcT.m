@@ -1,6 +1,36 @@
 function [T,Tplus,Tminus] = calcT(varargin)
-%CALCT Summary of this function goes here
-%   Detailed explanation goes here
+% [T,Tplus,Tminus] = calcT('Elmn?','ner?','ne?','neerr?','Velmnr?','Velmn?','Velmnerr?','Bscmlmn?','Blmn?',dt);
+%
+% Function to calculate anomalous viscosity using the 
+% particle moments and magnetic field from the four MMS spacecraft. 
+% Written by D. B. Graham
+% 
+% Input:
+%     Elmn? - electric fields from the four spacecraft (TSeries)
+%     ner? - high-resolution electron number densities from the four
+%       spacecraft (TSeries)
+%     ne? - electron number densities from the four spacecraft (TSeries)
+%     neerr? - error of the electron number densities from the four
+%       spacecraft (TSeries)
+%     Velmnr? - high-resolution electron bulk velocities from the four spacecraft (TSeries)
+%     Velmn? - electron bulk velocities from the four spacecraft (TSeries)
+%     Velmnerr? - error of the electron bulk velocities from the four spacecraft (TSeries)
+%     Bscmlmn? - Magnetic field from SCM from the four spacecraft (TSeries)
+%     Blmn? - Magnetic field from FGM from the four spacecraft (TSeries)
+%     dt - time delays between the four spacecraft (array of four numbers)
+%     
+% Output:
+%     T - anomalous viscosity computed from the four spacecraft (TSeries)
+%     Tplus - T + error in T (TSeries)
+%     Tminus - T - error in T (TSeries)
+
+% ----------------------------------------------------------------------------
+% "THE BEER-WARE LICENSE" (Revision 42):
+% <dgraham@irfu.se> wrote this file.  As long as you retain this notice you
+% can do whatever you want with this stuff. If we meet some day, and you think
+% this stuff is worth it, you can buy me a beer in return.   
+% Daniel B. Graham
+% ----------------------------------------------------------------------------
 
 ic = 1:4;
 fhf = 5;
