@@ -1,6 +1,38 @@
 function [Vanom,Vanomplus,Vanomminus,Dperp,Dperpplus,Dperpminus] = calcVn(varargin)
-%CALCVN Summary of this function goes here
-%   Detailed explanation goes here
+% [Vanom,Vanomplus,Vanomminus,Dperp,Dperpplus,Dperpminus] = calcVn('ner?','ne?','neerr?','Velmnr?','Velmnerr?','Rlmn?','Blmn?',dt);
+%
+% Function to calculate anomalous flows and diffusion coefficient using the 
+% particle moments and magnetic field from the four MMS spacecraft. 
+% Written by D. B. Graham
+% 
+% Input:
+%     ner? - high-resolution electron number densities from the four
+%       spacecraft (TSeries)
+%     ne? - electron number densities from the four spacecraft (TSeries)
+%     neerr? - error of the electron number densities from the four
+%       spacecraft (TSeries)
+%     Velmnr? - high-resolution electron bulk velocities from the four spacecraft (TSeries)
+%     Velmn? - electron bulk velocities from the four spacecraft (TSeries)
+%     Velmnerr? - error of the electron bulk velocities from the four spacecraft (TSeries)
+%     Rlmn? - Positions of the four spacecraft (TSeries)
+%     Blmn? - Magnetic field from FGM from the four spacecraft (TSeries)
+%     dt - time delays between the four spacecraft (array of four numbers)
+%     
+% Output:
+%     Vanom - anomalous flow in the normal direction (TSeries)
+%     Vanomplus - Vanom + error in Vanom (TSeries)
+%     Vanomminus - Vanom - error in Vanom (TSeries)
+%     Dperp - anomalous cross-field diffusion coefficient (TSeries)
+%     Dperpplus - Dperp + error in Dperp (TSeries)
+%     Dperpminus - Dperp - error in Dperp (TSeries)
+
+% ----------------------------------------------------------------------------
+% "THE BEER-WARE LICENSE" (Revision 42):
+% <dgraham@irfu.se> wrote this file.  As long as you retain this notice you
+% can do whatever you want with this stuff. If we meet some day, and you think
+% this stuff is worth it, you can buy me a beer in return.   
+% Daniel B. Graham
+% ----------------------------------------------------------------------------
 
 ic = 1:4;
 fhf = 5;
