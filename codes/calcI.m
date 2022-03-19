@@ -1,6 +1,49 @@
 function [I1,I1plus,I1minus,I2,I2plus,I2minus,IdVMdVN,IdVMdVNp,IdVMdVNm,IdndVN,IdndVNp,IdndVNm,Itot1,Itot1p,Itot1m] = calcI(varargin)
-%CALCT Summary of this function goes here
-%   Detailed explanation goes here
+% [I1,I1plus,I1minus,I2,I2plus,I2minus,IdVMdVN,IdVMdVNp,IdVMdVNm,IdndVN,IdndVNp,IdndVNm,Itot1,Itot1p,Itot1m] = calcI('Elmn?','ner?','ne?','neerr?','Velmnr?','Velmn?','Velmnerr?','Blmn?',dt,vt);
+%
+% Function to calculate anomalous inertial term and its parts using the 
+% particle moments and magnetic field from the four MMS spacecraft. 
+% Written by D. B. Graham
+% 
+% Input:
+%     Elmn? - electric fields from the four spacecraft (TSeries)
+%     ner? - high-resolution electron number densities from the four
+%       spacecraft (TSeries)
+%     ne? - electron number densities from the four spacecraft (TSeries)
+%     neerr? - error of the electron number densities from the four
+%       spacecraft (TSeries)
+%     Velmnr? - high-resolution electron bulk velocities from the four spacecraft (TSeries)
+%     Velmn? - electron bulk velocities from the four spacecraft (TSeries)
+%     Velmnerr? - error of the electron bulk velocities from the four spacecraft (TSeries)
+%     Blmn? - Magnetic field from FGM from the four spacecraft (TSeries)
+%     dt - time delays between the four spacecraft (array of four numbers)
+%     vt - velocity of the spacecraft across the boundary
+%     
+% Output:
+%     I1 - anomalous inertial term in the M direction (TSeries)
+%     I1plus - I1 + error in I1 (TSeries)
+%     I1minus - I1 - error in I1 (TSeries)
+%     I2 - anomalous inertial term in the M direction (below 1 Hz) (TSeries)
+%     I2plus - I2 + error in I2 (TSeries)
+%     I2minus - I2 - error in I2 (TSeries)
+%     IdVMdVN - VMVN anomalous term [part of anomalous inertial term] (TSeries)
+%     IdVMdVNp - IdVMdVN + error in IdVMdVN (TSeries)
+%     IdVMdVNm - IdVMdVN - error in IdVMdVN (TSeries)
+%     IdndVN - nVN anomalous term [part of anomalous inertial term] (TSeries)
+%     IdndVNp - IdndVN + error in IdndVN (TSeries)
+%     IdndVNm - IdndVN - error in IdndVN (TSeries)
+%     Itot1 - part of anomalous inertial term (TSeries)
+%     Itot1p - Itot1+error in Itot1 (TSeries)
+%     Itot1m - Itot1-error in Itot1 (TSeries)
+%
+
+% ----------------------------------------------------------------------------
+% "THE BEER-WARE LICENSE" (Revision 42):
+% <dgraham@irfu.se> wrote this file.  As long as you retain this notice you
+% can do whatever you want with this stuff. If we meet some day, and you think
+% this stuff is worth it, you can buy me a beer in return.   
+% Daniel B. Graham
+% ----------------------------------------------------------------------------
 
 ic = 1:4;
 fhf = 5;
