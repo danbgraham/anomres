@@ -75,7 +75,7 @@ c_eval('Rlmnb? = irf_newxyz(Rxyzb?,Lvecb,Mvecb,Nvecb);',ic);
 
 h=irf_plot(8,'newfigure'); 
 %h=irf_figure(540+ic,8);
-xSize=600; ySize=700;
+xSize=700; ySize=800;
 set(gcf,'Position',[10 10 xSize ySize]);
 
 xwidth = 0.865;
@@ -102,10 +102,10 @@ irf_zoom(h(1),'y',[-80 80]);
 hold(h(1),'on');
 irf_plot(h(1),[[tintXa.epochUnix tintXa.epochUnix]' [-1e2 1e2]'],'m--','linewidth',1.5);
 hold(h(1),'off');
-ylabel(h(1),{'E','(mV m^{-1})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(1),{'E_L ','E_M ','E_N '},[0.01 0.15])
-irf_legend(h(1),{'MMS1'},[0.01 0.95])
-irf_legend(h(1),'(a)',[0.99 0.95],'color','k','fontsize',12);
+ylabel(h(1),{'E','(mV m^{-1})'},'Interpreter','tex','fontsize',15);
+irf_legend(h(1),{'E_L ','E_M ','E_N '},[0.01 0.15],'fontsize',15)
+irf_legend(h(1),{'MMS1'},[0.01 0.95],'fontsize',15)
+irf_legend(h(1),'(a)',[0.99 0.95],'color','k','fontsize',15);
 
 ts = double((Dminusa.time(1).epochUnix));
 h(2)=irf_panel('DTa');
@@ -118,11 +118,11 @@ irf_plot(h(2),Da.y,'k');
 patch(h(2),[Tminusa.time.epochUnix-ts; flip(Tminusa.time.epochUnix-ts)],[Tminusa.y.data; flip(Tplusa.y.data)],[1 0.7 0.7],'edgecolor','none')
 irf_plot(h(2),Ta.y,'r');
 hold(h(2),'off');
-ylabel(h(2),{'D, T','(mV m^{-1})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(2),{'D_M'},[0.01 0.15])
-irf_legend(h(2),{'T_M'},[0.06 0.15],'color','r')
+ylabel(h(2),{'D, T','(mV m^{-1})'},'Interpreter','tex','fontsize',15);
+irf_legend(h(2),{'D_M'},[0.01 0.15],'fontsize',15)
+irf_legend(h(2),{'T_M'},[0.06 0.15],'color','r','fontsize',15)
 irf_zoom(h(2),'y',[-0.6 0.6])
-irf_legend(h(2),'(b)',[0.99 0.95],'color','k','fontsize',12);
+irf_legend(h(2),'(b)',[0.99 0.95],'color','k','fontsize',15);
 
 h(3)=irf_panel('Vnanoma');
 irf_plot(h(3),Vanoma);
@@ -131,9 +131,9 @@ irf_plot(h(3),[[tintXa.epochUnix tintXa.epochUnix]' [-1e2 1e2]'],'m--','linewidt
 patch(h(3),[Vanomminusa.time.epochUnix-ts; flip(Vanomminusa.time.epochUnix-ts)],[Vanomminusa.data; flip(Vanomplusa.data)],[0.8 0.8 0.8],'edgecolor','none')
 irf_plot(h(3),Vanoma,'k');
 hold(h(3),'off');
-ylabel(h(3),{'V_{N,anom}','(km s^{-1})'},'Interpreter','tex','fontsize',12);
+ylabel(h(3),{'V_{N,anom}','(km s^{-1})'},'Interpreter','tex','fontsize',15);
 irf_zoom(h(3),'y',[-15 15])
-irf_legend(h(3),'(c)',[0.99 0.95],'color','k','fontsize',12);
+irf_legend(h(3),'(c)',[0.99 0.95],'color','k','fontsize',15);
 
 tint3a = tint2a+[-0.01 0.01];
 Dperpa = Dperpa.tlim(tint3a);
@@ -148,9 +148,9 @@ irf_plot(h(4),[[tintXa.epochUnix tintXa.epochUnix]' [-1e2 1e2]'],'m--','linewidt
 patch(h(4),[Dperpminusa.time.epochUnix-ts; flip(Dperpminusa.time.epochUnix-ts)],[Dperpminusa.data/1e9; flip(Dperpplusa.data/1e9)],[0.8 0.8 0.8],'edgecolor','none')
 irf_plot(h(4),Dperpa/1e9,'k');
 hold(h(4),'off');
-ylabel(h(4),{'D_{\perp}','(10^9 m^{2} s^{-1})'},'Interpreter','tex','fontsize',12);
+ylabel(h(4),{'D_{\perp}','(10^9 m^{2} s^{-1})'},'Interpreter','tex','fontsize',15);
 irf_zoom(h(4),'y',[-1 1])
-irf_legend(h(4),'(d)',[0.99 0.95],'color','k','fontsize',12);
+irf_legend(h(4),'(d)',[0.99 0.95],'color','k','fontsize',15);
 
 irf_plot_axis_align(h(1:3));
 irf_zoom(h(1:3),'x',tint1a);
@@ -172,10 +172,10 @@ irf_zoom(h(5),'y',[-60 60]);
 hold(h(5),'on');
 irf_plot(h(5),[[tintXb.epochUnix tintXb.epochUnix]' [-1e2 1e2]'],'m--','linewidth',1.5);
 hold(h(5),'off');
-ylabel(h(5),{'E','(mV m^{-1})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(5),{'E_L ','E_M ','E_N '},[0.01 0.15])
-irf_legend(h(5),{'MMS3'},[0.01 0.95])
-irf_legend(h(5),'(e)',[0.99 0.95],'color','k','fontsize',12);
+ylabel(h(5),{'E','(mV m^{-1})'},'Interpreter','tex','fontsize',15);
+irf_legend(h(5),{'E_L ','E_M ','E_N '},[0.01 0.15],'fontsize',15)
+irf_legend(h(5),{'MMS3'},[0.01 0.95],'fontsize',15)
+irf_legend(h(5),'(e)',[0.99 0.95],'color','k','fontsize',15);
 
 h(6)=irf_panel('DTb');
 irf_plot(h(6),Db.y);
@@ -187,11 +187,11 @@ irf_plot(h(6),Db.y,'k');
 patch(h(6),[Tminusb.time.epochUnix-ts; flip(Tminusb.time.epochUnix-ts)],[Tminusb.y.data; flip(Tplusb.y.data)],[1 0.7 0.7],'edgecolor','none')
 irf_plot(h(6),Tb.y,'r');
 hold(h(6),'off');
-ylabel(h(6),{'D, T','(mV m^{-1})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(6),{'D_M'},[0.01 0.15])
-irf_legend(h(6),{'T_M'},[0.06 0.15],'color','r')
+ylabel(h(6),{'D, T','(mV m^{-1})'},'Interpreter','tex','fontsize',15);
+irf_legend(h(6),{'D_M'},[0.01 0.15],'fontsize',15)
+irf_legend(h(6),{'T_M'},[0.06 0.15],'color','r','fontsize',15)
 irf_zoom(h(6),'y',[-0.7 0.7])
-irf_legend(h(6),'(f)',[0.99 0.95],'color','k','fontsize',12);
+irf_legend(h(6),'(f)',[0.99 0.95],'color','k','fontsize',15);
 
 h(7)=irf_panel('Vnanomb');
 irf_plot(h(7),Vanomb);
@@ -200,9 +200,9 @@ irf_plot(h(7),[[tintXb.epochUnix tintXb.epochUnix]' [-1e2 1e2]'],'m--','linewidt
 patch(h(7),[Vanomminusb.time.epochUnix-ts; flip(Vanomminusb.time.epochUnix-ts)],[Vanomminusb.data; flip(Vanomplusb.data)],[0.8 0.8 0.8],'edgecolor','none')
 irf_plot(h(7),Vanomb,'k');
 hold(h(7),'off');
-ylabel(h(7),{'V_{N,anom}','(km s^{-1})'},'Interpreter','tex','fontsize',12);
+ylabel(h(7),{'V_{N,anom}','(km s^{-1})'},'Interpreter','tex','fontsize',15);
 irf_zoom(h(7),'y',[-50 50])
-irf_legend(h(7),'(g)',[0.99 0.95],'color','k','fontsize',12);
+irf_legend(h(7),'(g)',[0.99 0.95],'color','k','fontsize',15);
 
 tint3b = tint2b+[-0.01 0.01];
 Dperpb = Dperpb.tlim(tint3b);
@@ -216,9 +216,9 @@ irf_plot(h(8),[[tintXb.epochUnix tintXb.epochUnix]' [-1e2 1e2]'],'m--','linewidt
 patch(h(8),[Dperpminusb.time.epochUnix-ts; flip(Dperpminusb.time.epochUnix-ts)],[Dperpminusb.data/1e9; flip(Dperpplusb.data/1e9)],[0.8 0.8 0.8],'edgecolor','none')
 irf_plot(h(8),Dperpb/1e9,'k');
 hold(h(8),'off');
-ylabel(h(8),{'D_{\perp}','(10^9 m^{2} s^{-1})'},'Interpreter','tex','fontsize',12);
+ylabel(h(8),{'D_{\perp}','(10^9 m^{2} s^{-1})'},'Interpreter','tex','fontsize',15);
 irf_zoom(h(8),'y',[-2 2])
-irf_legend(h(8),'(h)',[0.99 0.95],'color','k','fontsize',12);
+irf_legend(h(8),'(h)',[0.99 0.95],'color','k','fontsize',15);
 
 irf_plot_axis_align(h(5:7));
 irf_zoom(h(5:7),'x',tint1b);
@@ -228,4 +228,4 @@ irf_plot_axis_align(h(8))
 %irf_timeaxis(h(5),'nodate');
 irf_plot_zoomin_lines_between_panels(h(7),h(8));
 c_eval('irf_pl_mark(h(?),irf_time(tint2b,''epochtt>epoch'')'',[255 255 100]/255)',5:7);
-set(h(1:8),'fontsize',12)
+set(h(1:8),'fontsize',15)
