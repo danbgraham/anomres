@@ -76,11 +76,11 @@ ts = double((D.time(1).epochUnix));
 
 h=irf_plot(4,'newfigure'); 
 %h=irf_figure(540+ic,8);
-xSize=700; ySize=500;
+xSize=900; ySize=700;
 set(gcf,'Position',[10 10 xSize ySize]);
 
 xwidth = 0.88;
-ywidth = 0.225;
+ywidth = 0.23;
 yst = 0.08;
 set(h(1),'position',[yst 0.99-ywidth xwidth ywidth]);
 set(h(2),'position',[yst 0.99-2*ywidth xwidth ywidth]);
@@ -89,11 +89,11 @@ set(h(4),'position',[yst 0.99-4*ywidth xwidth ywidth]);
 
 h(1)=irf_panel('Elmn');
 irf_plot(h(1),Elmn1);
-ylabel(h(1),{'E (mV m^{-1})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(1),{'E_L ','E_M ','E_N '},[0.2 0.9])
-irf_legend(h(1),{'MMS1'},[0.01 0.95])
-irf_legend(h(1),'(a)',[0.99 0.95],'color','k','fontsize',12);
-irf_legend(h(1),'Lower hybrid waves',[0.95 0.10],'color','k');
+ylabel(h(1),{'E (mV m^{-1})'},'Interpreter','tex','fontsize',18);
+irf_legend(h(1),{'E_L ','E_M ','E_N '},[0.2 0.9],'fontsize',18)
+irf_legend(h(1),{'MMS1'},[0.01 0.95],'fontsize',18)
+irf_legend(h(1),'(a)',[0.99 0.95],'color','k','fontsize',18);
+irf_legend(h(1),'Lower hybrid waves',[0.95 0.10],'color','k','fontsize',18);
 
 h(2)=irf_panel('Iterms');
 irf_plot(h(2),IdVMdVN*1e-17);
@@ -106,10 +106,10 @@ irf_plot(h(2),IdndVN*1e-17,'b');
 irf_plot(h(2),Itot1*1e-17,'r');
 hold(h(2),'off')
 irf_zoom(h(2),'y',[-5.5 4.5])
-ylabel(h(2),{'\Gamma (10^{17} m^{-1} s^{-2})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(2),'(b)',[0.99 0.95],'color','k','fontsize',12);
+ylabel(h(2),{'\Gamma (10^{17} m^{-1} s^{-2})'},'Interpreter','tex','fontsize',18);
+irf_legend(h(2),'(b)',[0.99 0.95],'color','k','fontsize',18);
 irf_legend(h(2),{'<n_e><\deltaV_{e,M} \deltaV_{e,N}>  '...
-  '<V_{e,M}><\deltan_{e} \deltaV_{e,N}> ','\Gamma'},[0.01 0.10]);
+  '<V_{e,M}><\deltan_{e} \deltaV_{e,N}> ','\Gamma'},[0.01 0.10],'fontsize',18);
 
 h(3)=irf_panel('EI');
 irf_plot(h(3),I1,'k');
@@ -120,9 +120,9 @@ irf_plot(h(3),I1,'k');
 irf_plot(h(3),I2,'r');
 hold(h(3),'off')
 irf_zoom(h(3),'y',[-0.19 0.19])
-ylabel(h(3),{'I_M (mV m^{-1})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(3),{'I_M: f < 5Hz',' ','I_M: f < 1Hz'},[0.05 0.9])
-irf_legend(h(3),'(c)',[0.99 0.95],'color','k','fontsize',12);
+ylabel(h(3),{'I_M (mV m^{-1})'},'Interpreter','tex','fontsize',18);
+irf_legend(h(3),{'I_M: f < 5Hz',' ','I_M: f < 1Hz'},[0.05 0.9],'fontsize',18)
+irf_legend(h(3),'(c)',[0.99 0.95],'color','k','fontsize',18);
 
 h(4)=irf_panel('Anomterms');
 irf_plot(h(4),D.y);
@@ -135,9 +135,10 @@ irf_plot(h(4),T.y,'b');
 irf_plot(h(4),I1,'r');
 hold(h(4),'off')
 irf_zoom(h(4),'y',[-1.1 1.1])
-ylabel(h(4),{'D, T, I (mV m^{-1})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(4),'(d)',[0.99 0.95],'color','k','fontsize',12);
-irf_legend(h(4),{'D_M ','T_M ','I_M: f<5Hz'},[0.05 0.10]);
+ylabel(h(4),{'D, T, I (mV m^{-1})'},'Interpreter','tex','fontsize',18);
+irf_legend(h(4),'(d)',[0.99 0.95],'color','k','fontsize',18);
+irf_legend(h(4),{'D_M ','T_M ','I_M: f<5Hz'},[0.05 0.10],'fontsize',18);
+set(h(1:4),'fontsize',16)
 
 irf_plot_axis_align(h(1:4));
 irf_zoom(h(1:4),'x',tint1);
