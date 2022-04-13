@@ -58,7 +58,7 @@ tintX = tintX+0.4503;
 tintY = tintY+0.4503;
 
 h=irf_plot(6,'newfigure'); 
-xSize=600; ySize=600;
+xSize=750; ySize=750;
 set(gcf,'Position',[10 10 xSize ySize]);
 
 xwidth = 0.89;
@@ -78,9 +78,9 @@ irf_plot(h(1),[[tintX.epochUnix tintX.epochUnix]' [-1e2 1e2]'],'m--','linewidth'
 irf_plot(h(1),[[tintY.epochUnix tintY.epochUnix]' [-1e2 1e2]'],'c--','linewidth',1.5);
 hold(h(1),'off');
 irf_zoom(h(1),'y',[-50 60]);
-ylabel(h(1),{'B (nT)'},'Interpreter','tex','fontsize',12);
-irf_legend(h(1),{'B_{L} ','B_{M} ','B_{N} ','|B|'},[0.18 0.8])
-irf_legend(h(1),'(a)',[0.99 0.95],'color','k','fontsize',12);
+ylabel(h(1),{'B (nT)'},'Interpreter','tex','fontsize',16);
+irf_legend(h(1),{'B_{L} ','B_{M} ','B_{N} ','|B|'},[0.18 0.8],'fontsize',16)
+irf_legend(h(1),'(a)',[0.99 0.95],'color','k','fontsize',16);
 c_eval('title(h(1),''MMS?'');',ic)
 
 h(2)=irf_panel('ne');
@@ -90,8 +90,8 @@ irf_plot(h(2),[[tintX.epochUnix tintX.epochUnix]' [-1e2 1e2]'],'m--','linewidth'
 irf_plot(h(2),[[tintY.epochUnix tintY.epochUnix]' [-1e2 1e2]'],'c--','linewidth',1.5);
 hold(h(2),'off');
 irf_zoom(h(2),'y',[0 20]);
-ylabel(h(2),{'n_e (cm^{-3})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(2),'(b)',[0.99 0.95],'color','k','fontsize',12);
+ylabel(h(2),{'n_e (cm^{-3})'},'Interpreter','tex','fontsize',16);
+irf_legend(h(2),'(b)',[0.99 0.95],'color','k','fontsize',16);
 
 h(3)=irf_panel('Exyz');
 irf_plot(h(3),Epp);
@@ -100,9 +100,9 @@ irf_plot(h(3),[[tintX.epochUnix tintX.epochUnix]' [-1e2 1e2]'],'m--','linewidth'
 irf_plot(h(3),[[tintY.epochUnix tintY.epochUnix]' [-1e2 1e2]'],'c--','linewidth',1.5);
 hold(h(3),'off');
 irf_zoom(h(3),'y',[-60 70]);
-ylabel(h(3),{'E (mV m^{-1})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(3),{'E_{L\perp} ','E_{M\perp} ','E_{N\perp}','E_{||}'},[0.01 0.95])
-irf_legend(h(3),'(c)',[0.99 0.95],'color','k','fontsize',12);
+ylabel(h(3),{'E (mV m^{-1})'},'Interpreter','tex','fontsize',16);
+irf_legend(h(3),{'E_{L\perp} ','E_{M\perp} ','E_{N\perp}','E_{||}'},[0.01 0.95],'fontsize',16)
+irf_legend(h(3),'(c)',[0.99 0.95],'color','k','fontsize',16);
 
 tintLH = irf.tint('2015-12-06T23:38:31.50Z/2015-12-06T23:38:33.90Z');
 c_eval('irf_pl_mark(h(?),irf_time(tintLH,''epochtt>epoch'')'',[255 255 100]/255)',1:4);
@@ -116,9 +116,9 @@ irf_plot(h(4),Veparr);
 irf_plot(h(4),[[tintY.epochUnix tintY.epochUnix]' [-1e5 1e5]'],'c--','linewidth',1.5);
 hold(h(4),'off')
 irf_zoom(h(4),'y',[-2200 1700]);
-ylabel(h(4),{'V_{e} (km s^{-1})'},'Interpreter','tex','fontsize',12);
-irf_legend(h(4),{'V_{L\perp}','V_{M\perp}','V_{N\perp}','V_{||}'},[0.85 0.15])
-irf_legend(h(4),'(d)',[0.99 0.95],'color','k','fontsize',12);
+ylabel(h(4),{'V_{e} (km s^{-1})'},'Interpreter','tex','fontsize',16);
+irf_legend(h(4),{'V_{L\perp}','V_{M\perp}','V_{N\perp}','V_{||}'},[0.85 0.15],'fontsize',16)
+irf_legend(h(4),'(d)',[0.99 0.95],'color','k','fontsize',16);
 
 h(5)=irf_panel('Ey');
 irf_plot(h(5),{Elmnr.y,VixB.y,VexB.y},'comp');
@@ -126,9 +126,9 @@ hold(h(5),'on')
 irf_plot(h(5),[[tintY.epochUnix tintY.epochUnix]' [-1e2 1e2]'],'c--','linewidth',1.5);
 hold(h(5),'off')
 irf_zoom(h(5),'y',[-55 40]);
-ylabel(h(5),{'E_M (mV m^{-1})'},'Interpreter','tex','fontsize',12);
+ylabel(h(5),{'E_M (mV m^{-1})'},'Interpreter','tex','fontsize',16);
 irf_legend(h(5),{'E','-V_i \times B','-V_e \times B'},[0.85 0.15])
-irf_legend(h(5),'(e)',[0.99 0.95],'color','k','fontsize',12);
+irf_legend(h(5),'(e)',[0.99 0.95],'color','k','fontsize',16);
 
 h(6)=irf_panel('dne');
 irf_plot(h(6),dnne);
@@ -136,8 +136,8 @@ hold(h(6),'on')
 irf_plot(h(6),[[tintY.epochUnix tintY.epochUnix]' [-1e2 1e2]'],'c--','linewidth',1.5);
 hold(h(6),'off')
 irf_zoom(h(6),'y',[-0.17 0.17]);
-ylabel(h(6),{'\delta n_e/n_e'},'Interpreter','tex','fontsize',12);
-irf_legend(h(6),'(f)',[0.99 0.95],'color','k','fontsize',12);
+ylabel(h(6),{'\delta n_e/n_e'},'Interpreter','tex','fontsize',16);
+irf_legend(h(6),'(f)',[0.99 0.95],'color','k','fontsize',16);
 
 irf_plot_axis_align(h(1:3));
 irf_zoom(h(1:3),'x',tint3);
@@ -145,4 +145,4 @@ irf_timeaxis(h(1:3),'nodate');
 irf_zoom(h(4:6),'x',tintLH);
 irf_plot_axis_align(h(4:6))
 irf_plot_zoomin_lines_between_panels(h(3),h(4));
-set(h(1:6),'fontsize',12)
+set(h(1:6),'fontsize',16)
