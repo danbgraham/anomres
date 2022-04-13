@@ -39,7 +39,7 @@ c_eval('Dperp?p = Dperp?+Dperperror?;',1:3);
 %% Plot figure
 h=irf_plot(2,'newfigure'); 
 %h=irf_figure(540+ic,8);
-xSize=750; ySize=300;
+xSize=900; ySize=400;
 set(gcf,'Position',[10 10 xSize ySize]);
 
 xwidth = 0.40;
@@ -60,10 +60,10 @@ c_eval('plot(h(1),[Dmax3(?) Dmax3(?)],[Tmax3m(?) Tmax3p(?)],''g'',''linewidth'',
 c_eval('plot(h(1),[Dmax3m(?) Dmax3p(?)],[Tmax3(?) Tmax3(?)],''g'',''linewidth'',1,''HandleVisibility'',''off'')',1:length(Dmax3))
 hold(h(1),'off')
 axis(h(1),[0 2 0 2])
-xlabel(h(1),'|D|_{max} (mV m^{-1})','fontsize',14)
-ylabel(h(1),'|T|_{max} (mV m^{-1})','fontsize',14)
-irf_legend(h(1),'(a)',[0.88 0.98],'fontsize',14)
-legend(h(1),{'EDR','Reconnection','No Reconnection'},'Location','NorthWest')
+xlabel(h(1),'|D|_{max} (mV m^{-1})','fontsize',18)
+ylabel(h(1),'|T|_{max} (mV m^{-1})','fontsize',18)
+irf_legend(h(1),'(a)',[0.88 0.98],'fontsize',18)
+legend(h(1),{'EDR','Reconnection','No Reconnection'},'Location','NorthWest','fontsize',18)
 
 plot(h(2),-VNanom1,Dperp1/1e9,'ko','linewidth',1,'markerface','k')
 hold(h(2),'on')
@@ -76,9 +76,9 @@ plot(h(2),-VNanom3,Dperp3/1e9,'go','linewidth',1,'markerface','g')
 c_eval('plot(h(2),-[VNanom3(?) VNanom3(?)],[Dperp3m(?) Dperp3p(?)]/1e9,''g'',''linewidth'',1)',1:length(Dperp3))
 c_eval('plot(h(2),-[VNanom3m(?) VNanom3p(?)],[Dperp3(?) Dperp3(?)]/1e9,''g'',''linewidth'',1)',1:length(Dperp3))
 hold(h(2),'off')
-ylabel(h(2),'D_{\perp}(10^9 m^2 s^{-1})','fontsize',14)
-xlabel(h(2),'-V_{N,anom} (km s^{-1})','fontsize',14)
-irf_legend(h(2),'(b)',[0.98 0.98],'fontsize',14)
+ylabel(h(2),'D_{\perp}(10^9 m^2 s^{-1})','fontsize',18)
+xlabel(h(2),'-V_{N,anom} (km s^{-1})','fontsize',18)
+irf_legend(h(2),'(b)',[0.98 0.98],'fontsize',18)
 axis(h(2),[0 50 0 2.5])
 
-set(h(1:2),'fontsize',14)
+set(h(1:2),'fontsize',18)
