@@ -11,8 +11,8 @@ yy = Figure1data.yy;
 
 fn=figure;
 
-set(fn,'Position',[10 10 300 450])
-h=axes('position',[0.17 0.09 0.75 0.85]);
+set(fn,'Position',[10 10 380 500])
+h=axes('position',[0.19 0.12 0.70 0.82]);
 
 ud=get(fn,'userdata');
 ud.subplot_handles=h;
@@ -22,7 +22,7 @@ set(fn,'defaultLineLineWidth',2);
 h = coplot((yy-3*Ly/4)*dp/1000,(xx-Lx/2)*dp/1000,rho02_Alfven_norm_slice*n,ay,'N (km)','L (km)','test',1,'w.-',[0.5 0.5 0.5],100);
 c=colorbar('ver');
 colormap('parula');
-ylabel(c, 'n_e (cm^{-3})')
+ylabel(c, 'n_e (cm^{-3})','fontsize',20)
 
 title('Electron number density')
 hold on;
@@ -32,7 +32,7 @@ dp2 = p2-p1;                         % Difference
 quiver(p1(1),p1(2),dp2(1),dp2(2),0,'color','k','linewidth',2,'MaxHeadSize',0.5)
 hold off;
 set(gca,'XDir','reverse');
-irf_legend('(b)',[0.98 0.99],'color','w','fontsize',14)
+irf_legend('(b)',[0.98 0.99],'color','w','fontsize',22)
 axis(gca,[-150 200 -700 600])
-set(gca,'fontsize',14)
+set(gca,'fontsize',20)
 set(gcf,'color','w')
