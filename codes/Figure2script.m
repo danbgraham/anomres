@@ -39,7 +39,7 @@ dfn = 1/median(diff(ne.time.epochUnix));
 dfnr = 1/median(diff(ner.time.epochUnix));
 
 % Lowpass filter - background terms
-ne = ne.filt(0,5,dfB,5);
+ne = ne.filt(0,5,dfn,5);
 
 % Highpass filter - fluctuating terms
 fhf = 5;
